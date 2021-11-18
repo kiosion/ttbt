@@ -21,6 +21,7 @@ Also make sure to change the font import to point to the location of the impact.
 Input: `ttbt image.jpg -t "Me when" -b "Bottom text"`
 
 Output:
+
 <img src="out.png"/>
 
 ## Deps:
