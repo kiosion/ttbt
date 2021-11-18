@@ -16,6 +16,13 @@ To add to your system path on linux, simply copy the file to /usr/bin, and add t
 ```
 Also make sure to change the font import to point to the location of the impact.ttf file. Done!
 
+## Example:
+
+Input: `ttbt image.jpg -t "Me when" -b "Bottom text"`
+
+Output:
+<img src="out.png"/>
+
 ## Deps:
 - Python 3.9
 - click >= 8.0.3
