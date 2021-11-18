@@ -1,4 +1,5 @@
 # Imports
+import os
 import click
 import textwrap
 from PIL import Image, ImageFont, ImageDraw
@@ -20,28 +21,33 @@ def main(image, t, b):
 
     print("Top caption: " + t)
     print("Bottom caption: " + b)
+
     img = Image.open(image)
     W, H = img.size
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("assets/impact.ttf", size=int(H/14))
 
+    fw = draw.textsize('a', font=font)
+    fw = fw[0]
+
     offset = 0
-    for line in textwrap.wrap(t, width=int(W-W/1.009)):
+    for line in textwrap.wrap(t, width=int(W/fw)):
         w, h = draw.textsize(line, font=font)
         draw.text(((W-w)/2,offset), line, fill="white", stroke_width=int((H/14)/16), stroke_fill="black", font=font)
         offset += font.getsize(line)[1]
 
     offset = H
-    for line in textwrap.wrap(b, width=int(W-W/1.009)):
+    for line in textwrap.wrap(b, width=int(W/fw)):
         w, h = draw.textsize(line, font=font)
         offset -= font.getsize(line)[1]
-    for line in textwrap.wrap(b, width=int(W-W/1.009)):
+    for line in textwrap.wrap(b, width=int(W/fw)):
         w, h = draw.textsize(line, font=font)
         draw.text(((W-w)/2,offset), line, fill="white", stroke_width=int((H/14)/16), stroke_fill="black", font=font)
         offset += font.getsize(line)[1]
 
-    img.save(image + '_out.png')
-    print("Image saved!")
+    cwd = os.getcwd()
+    img.save(cwd + '/out.png')
+    print("Image saved! " + cwd + '/out.png')
 
 if __name__ == "__main__":
     main()
