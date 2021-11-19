@@ -7,14 +7,13 @@ Command-line Top Text Bottom Text meme generator
 - Reads in .jpg, .png, or .gif images
 
 ## Usage:
-- Either run the file directly, or add to your system PATH.
-- Ex: ttbt path/to/image.jpg -t "Top Text" -b "Bottom Text"
+Either run the file directly, or add to your system PATH. 
 
-To add to your system path on linux, simply copy the file to /usr/bin, and add the following line to the top of the file:
+To add to your system path on linux, copy the file to /usr/bin, remove .py, and add the following line to the top of the file:
 ```
 #!/usr/bin/env python
 ```
-Also make sure to change the font import to point to the location of the impact.ttf file. Done!
+Also make sure to change the font import to point to the absolute location of the impact.ttf file. Done!
 
 ## Example:
 
