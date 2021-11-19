@@ -1,5 +1,5 @@
 # ttbt
-Command-line Top Text Bottom Text meme generator
+Command-line 'Top Text Bottom Text' meme generator, written in python. Intended to use for shitposting on short notice. Or something like that.
 
 ## Features:
 - Uses Impact font with stroke
