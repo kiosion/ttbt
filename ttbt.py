@@ -27,8 +27,7 @@ def main(image, t, b):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("assets/impact.ttf", size=int(H/14))
 
-    fw = draw.textsize('a', font=font)
-    fw = fw[0]
+    fw, fh = draw.textsize('a', font=font)
 
     offset = 0
     for line in textwrap.wrap(t, width=int(W/fw)):
@@ -36,7 +35,7 @@ def main(image, t, b):
         draw.text(((W-w)/2,offset), line, fill="white", stroke_width=int((H/14)/16), stroke_fill="black", font=font)
         offset += font.getsize(line)[1]
 
-    offset = H
+    offset = H-fh/4
     for line in textwrap.wrap(b, width=int(W/fw)):
         w, h = draw.textsize(line, font=font)
         offset -= font.getsize(line)[1]
@@ -51,3 +50,4 @@ def main(image, t, b):
 
 if __name__ == "__main__":
     main()
+
