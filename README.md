@@ -27,3 +27,6 @@ Output:
 - Python 3.9
 - click >= 8.0.3
 - Pillow >= 8.4.0
+
+## Todo:
+- Add gif support
